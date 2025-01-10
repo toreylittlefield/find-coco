@@ -1,22 +1,57 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lost Dog Coco - Missing in Ubud | Reward Offered</title>
+	
+		<!-- SEO Meta Tags -->
+		<meta name="description" content="Lost Bali Dog in Ubud area. Female named Coco, light brown/greyish black brindle, missing since Nov 28. Last seen at Sayan, Kutuh Rice Field. Reward offered." />
+		<meta name="keywords" content="lost dog, missing dog, Ubud, Bali, Coco, Sayan, Kutuh Rice Field" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Help Find Lost Dog Coco in Ubud - Reward Offered" />
+		<meta property="og:description" content="Please help find Coco - Lost Bali Dog in Ubud area. Light brown/greyish brindle. Missing since Nov 28. Reward offered." />
+		<meta property="og:image" content="/images/coco.jpg" />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Lost Dog Coco - Please Help Find Her in Ubud" />
+		<meta name="twitter:description" content="Female Bali Dog missing in Ubud. Light brown/greyish brindle. Reward offered for safe return." />
+		<meta name="twitter:image" content="/images/coco.jpg" />
+
+		<!--  -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<script is:inline>
+	// Structured Data
+	const structuredData = {
+	  "@context": "https://schema.org",
+	  "@type": "WebPage",
+	  "name": "Lost Dog Coco - Bali Dog Missing in Ubud",
+	  "description": "Female Bali Dog missing since Nov 28 2024. Last seen in Sayan, Kutuh Rice Field near Good Day Resto, Ubud.",
+	  "mainEntity": {
+		"@type": "LostAndFound",
+		"name": "Lost Dog - Coco",
+		"datePosted": "2024-11-28",
+		"lostLocation": {
+		  "@type": "Place",
+		  "name": "Sayan, Kutuh Rice Field",
+		  "address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Ubud",
+			"addressRegion": "Bali",
+			"addressCountry": "ID"
+		  }
+		}
+	  }
+	};
+  </script>
