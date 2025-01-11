@@ -1,76 +1,69 @@
 ---
-import { Picture } from 'astro:assets';
-import cocoOne from '@assets/coco-1.jpg';
+import { Picture } from 'astro:assets'
+import cocoOne from '@assets/coco-1.jpg'
 ---
 
 <div class="bg-yellow-300" id="container">
-	<!-- <img id="background" src={background.src} alt="" fetchpriority="high" /> -->
-	<main class="max-w-2xl mx-auto p-6 min-h-screen">
-		<div class="text-center mb-6">
-		  <h1 class="text-6xl font-black mb-4">I'M COCO</h1>
-		  <p class="text-2xl font-bold">
-			I'M LOST 😢 LAST SEEN SAYAN, KUTUH RICE FIELD<br />
-			(GOOD DAY RESTO, UBUD)
-		  </p>
-		</div>
-  
-		<div class="grid md:grid-cols-2 gap-6">
-		  <div class="relative">
-			<!-- <img 
-			  src="/images/coco.jpg" 
-			  alt="Coco - Lost female Bali Dog, light brown and greyish black brindle coat" 
-			  class="w-full rounded-lg shadow-lg"
-			  width="800"
-			  height="800"
-			/> -->
-			<Picture src={cocoOne} 
-						  alt="Coco - Lost female Bali Dog, light brown and greyish black brindle coat" 
-			  class="w-full rounded-lg shadow-lg"
-			  />
-			<div class="absolute bottom-4 left-0 w-full text-center">
-			  <a 
-				href="tel:+62813375038902" 
-				class="text-4xl font-bold text-white shadow-text hover:underline"
-			  >
-				0813 3750 3890
-			  </a>
-			</div>
-		  </div>
-  
-		  <div class="space-y-4">
-			<div class="text-5xl font-black text-red-600 mb-4">
-			  SEEN ME?
-			</div>
-			<div class="text-2xl font-bold">
-			  PLS SCREENSHOT<br />
-			  IN CASE YOU SEE ME
-			</div>
-			
-			<dl class="space-y-2 text-xl">
-			  <dt class="text-red-600 font-bold">Breed:</dt>
-			  <dd>Bali Dog, Female, 2 yo</dd>
-			  
-			  <dt class="text-red-600 font-bold">Color:</dt>
-			  <dd>Light brown greyish black brindle</dd>
-			  
-			  <dt class="text-red-600 font-bold text-2xl">NO COLLAR</dt>
-			  <dd>Very skinny, white streak above nose</dd>
-			</dl>
-  
-			<div class="border-t-4 border-red-600 pt-2 mt-4">
-			  <time datetime="2024-11-28" class="text-xl font-bold block">
-				Missing since 28 Nov 24
-			  </time>
-			  <p class="text-lg">
-				Pls take pic if you see her
-			  </p>
-			</div>
-  
-			<div class="bg-black text-white text-center p-4 text-2xl font-bold mt-4">
-			  REWARD<br />
-			  AVAILABLE
-			</div>
-		  </div>
-		</div>
-	</main>
+  <!-- <img id="background" src={background.src} alt="" fetchpriority="high" /> -->
+  <main class="max-w-2xl mx-auto p-6 min-h-screen">
+    <div class="text-center mb-6">
+      <h1 class="text-6xl font-black mb-4">I'M COCO</h1>
+      <p class="text-2xl font-bold">
+        I'M LOST 😢 LAST SEEN SAYAN, KUTUH RICE FIELD<br />
+        (GOOD DAY RESTO, UBUD)
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="relative">
+        <Picture
+          src={cocoOne}
+          formats={['avif', 'webp']}
+          alt="Coco - Lost female Bali Dog, light brown and greyish black brindle coat"
+          class="w-full rounded-lg shadow-lg"
+        />
+        <div class="absolute bottom-4 left-0 w-full text-center">
+          <a
+            href="tel:+62813375038902"
+            class="text-4xl font-bold text-white shadow-text hover:underline"
+          >
+            0813 3750 3890
+          </a>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="text-5xl font-black text-red-600 mb-4">SEEN ME?</div>
+        <div class="text-2xl font-bold">
+          PLS SCREENSHOT<br />
+          IN CASE YOU SEE ME
+        </div>
+
+        <dl class="space-y-2 text-xl">
+          <dt class="text-red-600 font-bold">Breed:</dt>
+          <dd>Bali Dog, Female, 2 yo</dd>
+
+          <dt class="text-red-600 font-bold">Color:</dt>
+          <dd>Light brown greyish black brindle</dd>
+
+          <dt class="text-red-600 font-bold text-2xl">NO COLLAR</dt>
+          <dd>Very skinny, white streak above nose</dd>
+        </dl>
+
+        <div class="border-t-4 border-red-600 pt-2 mt-4">
+          <time datetime="2024-11-28" class="text-xl font-bold block">
+            Missing since 28 Nov 24
+          </time>
+          <p class="text-lg">Pls take pic if you see her</p>
+        </div>
+
+        <div
+          class="bg-black text-white text-center p-4 text-2xl font-bold mt-4"
+        >
+          REWARD<br />
+          AVAILABLE
+        </div>
+      </div>
+    </div>
+  </main>
 </div>
