@@ -5,6 +5,7 @@
 export default {
   plugins: [
     'prettier-plugin-astro',
+    'prettier-plugin-organize-imports',
     // must come last https://github.com/tailwindlabs/prettier-plugin-tailwindcss
     'prettier-plugin-tailwindcss',
   ],
@@ -16,6 +17,9 @@ export default {
       },
     },
   ],
+  tailwindConfig: './tailwind.config.mjs',
+  organizeImportsSkipDestructiveCodeActions: true,
+  // https://prettier.io/docs/en/options.html
   printWidth: 80,
   semi: false,
   singleQuote: true,
