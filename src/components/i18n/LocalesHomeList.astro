@@ -1,0 +1,26 @@
+---
+// Returns a link to the top page of each locale
+
+import { LOCALES, type Locale } from '@/i18n/ui'
+import { typeSafeObjectEntries } from '@/utils/helpers'
+
+const getPathHome = (lang: Locale) => {
+  if (lang === 'en') return '/'
+  return `/${lang}/`
+}
+---
+
+{
+  typeSafeObjectEntries(LOCALES).map(([lang, { label }]) => (
+    <li>
+      <a
+        class="hover:underline"
+        href={getPathHome(lang)}
+        onclick={`localStorage.selectedLang = "${lang}"`}
+        dir={LOCALES[lang].dir || null}
+      >
+        {label}
+      </a>
+    </li>
+  ))
+}
