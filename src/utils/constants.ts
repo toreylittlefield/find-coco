@@ -1,0 +1,3 @@
+export const ENV_VARS = {
+  PUBLIC_WHATSAPP_PHONE_NUMBER: import.meta.env.PUBLIC_WHATSAPP_PHONE_NUMBER,
+}
