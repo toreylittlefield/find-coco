@@ -1,0 +1,23 @@
+---
+// Footer UI displayed on each page.
+import LocalesHomeList from '@/components/i18n/LocalesHomeList.astro'
+const currentYear = new Date().getFullYear()
+const copyrightYearRange = currentYear === 2025 ? '2025' : `2025-${currentYear}`
+---
+
+<footer
+  class="mx-auto flex max-w-4xl flex-col items-center justify-center gap-3 px-4 py-8 text-center"
+>
+  <ul class="flex justify-center gap-4 rounded-lg border border-gray-400 p-4">
+    <LocalesHomeList />
+  </ul>
+
+  <a
+    class="copy"
+    href="https://toreylittlefield.dev/"
+    target="_blank"
+    dir="ltr"
+  >
+    © Torey Littlefield {copyrightYearRange}.
+  </a>
+</footer>
