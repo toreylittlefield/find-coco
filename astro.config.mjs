@@ -6,6 +6,15 @@ import netlify from '@astrojs/netlify'
 
 // https://astro.build/config
 export default defineConfig({
+  i18n: {
+    defaultLocale: 'en',
+    // bahasa indonesia and english
+    locales: ['id', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: true,
+    },
+  },
   integrations: [tailwind()],
   adapter: netlify(),
 })
