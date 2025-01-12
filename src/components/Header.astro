@@ -1,0 +1,47 @@
+---
+// Header & Navigation UI displayed on each page.
+
+// import LocaleSelect from '@/components/i18n/LocaleSelect.astro'
+// import { Image } from 'astro:assets'
+import { LABELS, useTranslations } from '@/i18n'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+const tr = useTranslations(Astro.currentLocale)
+
+const locale = Astro.currentLocale
+
+const isActive = (path: string) =>
+  getRelativeLocaleUrl(locale, path) === Astro.url.pathname
+---
+
+<header class="flex items-center justify-between p-4">
+  <!-- <h1> -->
+  <!-- <h1 dir="ltr">
+    <a href={getRelativeLocaleUrl(locale, "/")}>
+      <Image src={AstroImage} alt="Astro" />
+      i18n Starter
+    </a> -->
+  <!-- </h1> -->
+
+  <!-- <LocaleSelect /> -->
+
+  <nav class="">
+    <ul>
+      <li>
+        <a
+          href={getRelativeLocaleUrl(locale, '/')}
+          class={isActive('/') ? 'underline underline-offset-2' : null}
+        >
+          {tr(LABELS.HOME)}
+        </a>
+      </li>
+      <li>
+        <a
+          href={getRelativeLocaleUrl(locale, '/contact')}
+          class={isActive('/contact') ? 'underline underline-offset-2' : null}
+        >
+          {tr(LABELS.CONTACT)}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
