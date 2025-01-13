@@ -1,3 +1,4 @@
+import { type IconName } from '@/utils/icons'
 import type { LABELS } from './labels'
 
 interface LocaleSetting {
@@ -5,6 +6,7 @@ interface LocaleSetting {
     label: string
     lang: string
     dir: 'rtl' | 'ltr'
+    iconName: IconName
   }
 }
 
@@ -15,11 +17,13 @@ export const LOCALES = {
     label: 'English',
     lang: 'en',
     dir: 'ltr',
+    iconName: 'english',
   },
   id: {
     label: 'Bahasa Indonesia',
     lang: 'id',
     dir: 'ltr',
+    iconName: 'indonesia',
   },
 } as const satisfies LocaleSetting
 
