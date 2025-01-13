@@ -1,6 +1,8 @@
 ---
 // Footer UI displayed on each page.
+import Button from '@/components/Button.astro'
 import LocalesHomeList from '@/components/i18n/LocalesHomeList.astro'
+import LinkWhatsApp from '@/components/LinkWhatsApp.astro'
 const currentYear = new Date().getFullYear()
 const copyrightYearRange = currentYear === 2025 ? '2025' : `2025-${currentYear}`
 ---
@@ -8,10 +10,14 @@ const copyrightYearRange = currentYear === 2025 ? '2025' : `2025-${currentYear}`
 <footer
   class="mx-auto flex max-w-4xl flex-col items-center justify-center gap-3 px-4 py-8 text-center"
 >
-  <ul class="flex justify-center gap-4 rounded-lg border border-gray-400 p-4">
+  <Button asChild={true}>
+    <LinkWhatsApp />
+  </Button>
+  <ul class="border-border flex justify-center gap-4 rounded-lg border p-3">
     <LocalesHomeList />
   </ul>
 
+  <p>Please help us find Coco and bring her home 🥺💔🐕.</p>
   <a
     class="copy"
     href="https://toreylittlefield.dev/"
