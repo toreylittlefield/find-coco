@@ -15,6 +15,7 @@ export default defineConfig({
       redirectToDefaultLocale: true,
     },
   },
-  integrations: [tailwind()],
+
+  integrations: [tailwind({ applyBaseStyles: false })],
   adapter: netlify(),
 })
