@@ -23,11 +23,11 @@ const tr = useTranslations(Astro.currentLocale)
           alt="Coco - Lost female Bali Dog, light brown and greyish black brindle coat"
           class="w-full rounded-lg shadow-lg"
         />
-        <div class="absolute bottom-4 left-0 w-full text-center text-white">
+        <div class="text-secondary absolute bottom-4 left-0 w-full text-center">
           <p>{tr(LABELS.PLEASE_CALL_OR_MESSAGE)}</p>
           <a
             href="tel:+62813375038902"
-            class="text-3xl font-bold text-white shadow-xl hover:underline"
+            class="text-secondary text-3xl font-bold shadow-xl hover:underline"
           >
             +62813 3750 3890
           </a>
@@ -36,31 +36,36 @@ const tr = useTranslations(Astro.currentLocale)
 
       <div class="space-y-4">
         <div class="mb-4 text-5xl font-black text-red-600">SEEN ME?</div>
-        <div class="text-2xl font-bold">
+        <div class="text-foreground text-2xl font-bold">
           PLS SCREENSHOT<br />
           IN CASE YOU SEE ME
         </div>
 
         <dl class="space-y-2 text-xl">
           <dt class="font-bold text-red-600">Breed:</dt>
-          <dd>Bali Dog, Female, 2 yo</dd>
+          <dd class="text-foreground">Bali Dog, Female, 2 years old</dd>
 
           <dt class="font-bold text-red-600">Color:</dt>
-          <dd>Light brown greyish black brindle</dd>
+          <dd class="text-foreground">Light brown greyish black brindle</dd>
 
           <dt class="text-2xl font-bold text-red-600">NO COLLAR</dt>
-          <dd>Very skinny, white streak above nose</dd>
+          <dd class="text-foreground">Very skinny, white streak above nose</dd>
         </dl>
 
         <div class="mt-4 border-t-4 border-red-600 pt-2">
-          <time datetime="2024-11-28" class="block text-xl font-bold">
-            Missing since 28 Nov 24
+          <time
+            datetime="2024-11-28"
+            class="text-foreground block text-xl font-bold"
+          >
+            Missing since 28 Nov 2024
           </time>
-          <p class="text-lg">Pls take pic if you see her</p>
+          <p class="text-foreground text-lg">
+            Please take picture if you see her
+          </p>
         </div>
 
         <div
-          class="mt-4 bg-black p-4 text-center text-2xl font-bold text-white"
+          class="bg-foreground text-secondary mt-4 p-4 text-center text-2xl font-bold"
         >
           REWARD<br />
           AVAILABLE
