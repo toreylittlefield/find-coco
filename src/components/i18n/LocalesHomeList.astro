@@ -4,7 +4,8 @@
 import Button from '@/components/Button.astro'
 import Icon from '@/components/Icon.astro'
 import { LOCALES, type Locale } from '@/i18n/ui'
-import { typeSafeObjectEntries } from '@/utils/helpers'
+import { cn, typeSafeObjectEntries } from '@/utils/helpers'
+const locale = Astro.currentLocale
 
 const getPathHome = (lang: Locale) => {
   if (lang === 'en') return '/'
@@ -17,7 +18,10 @@ const getPathHome = (lang: Locale) => {
     <li>
       <Button class="text-background" asChild={false} variant="link">
         <a
-          class="flex items-center gap-2"
+          class={cn(
+            'flex items-center gap-2',
+            locale === lang ? 'underline underline-offset-2' : null,
+          )}
           href={getPathHome(lang)}
           onclick={`localStorage.selectedLang = "${lang}"`}
           dir={LOCALES[lang].dir || null}
