@@ -1,0 +1,22 @@
+---
+import Button, { type Props as ButtonProps } from '@/components/Button.astro'
+import LinkWhatsApp from '@/components/LinkWhatsApp.astro'
+import LinkFBMessenger from '@/components/LinkFBMessenger.astro'
+import { cn } from '@/utils/helpers'
+
+interface Props extends Pick<ButtonProps, 'class' | 'variant'> {}
+const { class: className, variant } = Astro.props
+---
+
+<ul class={cn('flex justify-center gap-4 px-4', className)}>
+  <li>
+    <Button asChild variant={variant}>
+      <LinkWhatsApp />
+    </Button>
+  </li>
+  <li>
+    <Button asChild variant={variant}>
+      <LinkFBMessenger />
+    </Button>
+  </li>
+</ul>
