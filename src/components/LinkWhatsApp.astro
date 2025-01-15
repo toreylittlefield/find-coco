@@ -4,20 +4,25 @@ import type { HTMLAttributes } from 'astro/types'
 import { cn } from '@/utils/helpers'
 import Icon from '@/components/Icon.astro'
 
-export interface WhatsAppLinkProps extends HTMLAttributes<'a'> {}
+export interface Props extends HTMLAttributes<'a'> {}
 
 const { class: className, ...props } = Astro.props
 ---
 
 <!-- whatsapp click to chat button -->
 <a
-  aria-label="Chat on WhatsApp"
+  aria-label="Contact on WhatsApp"
   class={cn('flex items-center gap-2', className)}
   {...props}
+  target="_blank"
+  rel="noopener noreferrer"
   href={encodeURI(
     `https://wa.me/${ENV_VARS.PUBLIC_WHATSAPP_PHONE_NUMBER}?text=${WHATS_APP_MESSAGE_TEXT}`,
   )}
 >
   <Icon iconName="whatsapp" />
-  Contact via WhatsApp
+  <div>
+    <span>Contact via</span>
+    <span>WhatsApp</span>
+  </div>
 </a>
