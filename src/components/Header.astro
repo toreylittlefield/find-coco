@@ -3,17 +3,16 @@
 
 // import LocaleSelect from '@/components/i18n/LocaleSelect.astro'
 // import { Image } from 'astro:assets'
-import { LABELS, useTranslations } from '@/i18n'
-import { getRelativeLocaleUrl } from 'astro:i18n'
-const tr = useTranslations(Astro.currentLocale)
+import LocalesHomeList from '@/components/i18n/LocalesHomeList.astro'
+// import { getRelativeLocaleUrl } from 'astro:i18n'
 
-const locale = Astro.currentLocale
-
-const isActive = (path: string) =>
-  getRelativeLocaleUrl(locale, path) === Astro.url.pathname
+// const isActive = (path: string) =>
+//   getRelativeLocaleUrl(locale, path) === Astro.url.pathname
 ---
 
-<header class="flex items-center justify-between p-4">
+<header
+  class="mx-auto flex max-w-4xl flex-col items-center justify-center px-8 py-2 text-center"
+>
   <!-- <h1> -->
   <!-- <h1 dir="ltr">
     <a href={getRelativeLocaleUrl(locale, "/")}>
@@ -24,7 +23,7 @@ const isActive = (path: string) =>
 
   <!-- <LocaleSelect /> -->
 
-  <nav class="">
+  <!-- <nav class="">
     <ul>
       <li>
         <a
@@ -43,5 +42,11 @@ const isActive = (path: string) =>
         </a>
       </li>
     </ul>
-  </nav>
+  </nav> -->
+  <div class="flex flex-col">
+    <h2 class="text-xl">Select Language</h2>
+    <ul class="flex gap-2">
+      <LocalesHomeList />
+    </ul>
+  </div>
 </header>
