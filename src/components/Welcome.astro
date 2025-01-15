@@ -2,6 +2,7 @@
 import { Picture } from 'astro:assets'
 import cocoOne from '@/assets/coco-1.jpg'
 import { LABELS, useTranslations } from '@/i18n'
+import ButtonsGroupContact from '@/components/ButtonsGroupContact.astro'
 const tr = useTranslations(Astro.currentLocale)
 ---
 
@@ -16,27 +17,32 @@ const tr = useTranslations(Astro.currentLocale)
     </div>
 
     <div class="grid gap-6 md:grid-cols-2">
-      <div class="relative h-min">
-        <Picture
-          src={cocoOne}
-          formats={['avif', 'webp']}
-          alt="Coco - Lost female Bali Dog, light brown and greyish black brindle coat"
-          class="w-full rounded-lg shadow-lg"
-        />
-        <div class="text-secondary absolute bottom-4 left-0 w-full text-center">
-          <p>{tr(LABELS.PLEASE_CALL_OR_MESSAGE)}</p>
-          <a
-            href="tel:+62813375038902"
-            class="text-secondary text-3xl font-bold shadow-xl hover:underline"
+      <div class="space-y-4">
+        <div class="relative h-min">
+          <Picture
+            src={cocoOne}
+            formats={['avif', 'webp']}
+            alt="Coco - Lost female Bali Dog, light brown and greyish black brindle coat"
+            class="w-full rounded-lg shadow-lg"
+          />
+          <div
+            class="absolute bottom-4 left-0 w-full text-center text-secondary"
           >
-            +62813 3750 3890
-          </a>
+            <p>{tr(LABELS.PLEASE_CALL_OR_MESSAGE)}</p>
+            <a
+              href="tel:+62813375038902"
+              class="text-3xl font-bold text-secondary shadow-xl hover:underline"
+            >
+              +62813 3750 3890
+            </a>
+          </div>
         </div>
+        <ButtonsGroupContact class="flex flex-wrap" variant={'default'} />
       </div>
 
       <div class="space-y-4">
         <div class="mb-4 text-5xl font-black text-red-600">SEEN ME?</div>
-        <div class="text-foreground text-2xl font-bold">
+        <div class="text-2xl font-bold text-foreground">
           PLS SCREENSHOT<br />
           IN CASE YOU SEE ME
         </div>
@@ -55,17 +61,17 @@ const tr = useTranslations(Astro.currentLocale)
         <div class="mt-4 border-t-4 border-red-600 pt-2">
           <time
             datetime="2024-11-28"
-            class="text-foreground block text-xl font-bold"
+            class="block text-xl font-bold text-foreground"
           >
             Missing since 28 Nov 2024
           </time>
-          <p class="text-foreground text-lg">
+          <p class="text-lg text-foreground">
             Please take picture if you see her
           </p>
         </div>
 
         <div
-          class="bg-foreground text-secondary mt-4 p-4 text-center text-2xl font-bold"
+          class="mt-4 bg-foreground p-4 text-center text-2xl font-bold text-secondary"
         >
           REWARD<br />
           AVAILABLE
