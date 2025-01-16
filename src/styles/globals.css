@@ -5,8 +5,8 @@
 @layer base {
   :root {
     /* Main brand colors from poster */
-    --yellow-brand: 51 97% 83%; /* HSL(51, 97%, 83%) */
-    --red-brand: 0 100% 41%; /* HSL(0, 100%, 41%) */
+    --yellow-brand: 36.14 100% 67.45%; /* hsl(36.14, 100%, 67.45%) */
+    --red-brand: 5 87% 49%; /* hsl(5, 87%, 49%); */
     --black-brand: 0 0% 0%; /* HSL(0, 0%, 0%) */
     --white-brand: 0 0% 100%; /* HSL(0, 0%, 100%) */
 
@@ -49,6 +49,9 @@
 
     /* Common radius */
     --radius: 0.5rem;
+
+    /* Additional */
+    --poster: var(--yellow-brand);
   }
 
   .dark {
