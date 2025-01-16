@@ -37,6 +37,9 @@ export default {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        poster: {
+          DEFAULT: 'hsl(var(--poster))',
+        },
       },
       borderRadius: {
         lg: `var(--radius)`,
