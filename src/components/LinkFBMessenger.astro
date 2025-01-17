@@ -1,0 +1,27 @@
+---
+import { ENV_VARS, WHATS_APP_MESSAGE_TEXT } from 'src/utils/constants'
+import type { HTMLAttributes } from 'astro/types'
+import { cn } from '@/utils/helpers'
+import Icon from '@/components/Icon.astro'
+
+export interface Props extends HTMLAttributes<'a'> {}
+
+const { class: className, ...props } = Astro.props
+---
+
+<a
+  aria-label="Contact via Facebook Messenger"
+  class={cn('flex items-center gap-2', className)}
+  {...props}
+  target="_blank"
+  rel="noopener noreferrer"
+  href={encodeURI(
+    `https://m.me/${ENV_VARS.PUBLIC_FB_MESSENGER_URL}?text=${WHATS_APP_MESSAGE_TEXT}`,
+  )}
+>
+  <Icon iconName="messenger" />
+  <div>
+    <span>Contact via</span>
+    <span>Messenger</span>
+  </div>
+</a>

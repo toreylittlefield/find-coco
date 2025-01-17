@@ -1,0 +1,12 @@
+---
+import { ICONS_MAP, type IconName } from '@/utils/icons'
+
+export interface Props {
+  iconName: IconName
+}
+
+const { iconName } = Astro.props
+const iconToRender = ICONS_MAP[iconName]
+---
+
+<Fragment set:html={iconToRender} />

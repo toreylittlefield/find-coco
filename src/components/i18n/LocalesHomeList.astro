@@ -1,0 +1,35 @@
+---
+// Returns a link to the top page of each locale
+
+import Button from '@/components/Button.astro'
+import Icon from '@/components/Icon.astro'
+import { LOCALES, type Locale } from '@/i18n/ui'
+import { cn, typeSafeObjectEntries } from '@/utils/helpers'
+const locale = Astro.currentLocale
+
+const getPathHome = (lang: Locale) => {
+  if (lang === 'en') return '/'
+  return `/${lang}/`
+}
+---
+
+{
+  typeSafeObjectEntries(LOCALES).map(([lang, { label, iconName }]) => (
+    <li>
+      <Button class="text-background" asChild={false} variant="link">
+        <a
+          class={cn(
+            'flex items-center gap-2',
+            locale === lang ? 'underline underline-offset-2' : null,
+          )}
+          href={getPathHome(lang)}
+          onclick={`localStorage.selectedLang = "${lang}"`}
+          dir={LOCALES[lang].dir || null}
+        >
+          {iconName && <Icon iconName={iconName} />}
+          {label}
+        </a>
+      </Button>
+    </li>
+  ))
+}

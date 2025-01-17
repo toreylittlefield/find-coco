@@ -1,13 +1,15 @@
 ---
 import { Picture } from 'astro:assets'
-import cocoOne from '@assets/coco-1.jpg'
+import cocoOne from '@/assets/coco-1.jpg'
+import { LABELS, useTranslations } from '@/i18n'
+import ButtonsGroupContact from '@/components/ButtonsGroupContact.astro'
+const tr = useTranslations(Astro.currentLocale)
 ---
 
-<div class="bg-yellow-300" id="container">
-  <!-- <img id="background" src={background.src} alt="" fetchpriority="high" /> -->
+<div class="bg-poster" id="container">
   <main class="mx-auto min-h-screen max-w-2xl p-6">
-    <div class="mb-6 text-center">
-      <h1 class="mb-4 text-6xl font-black">I'M COCO</h1>
+    <div class="mb-6 text-center text-foreground">
+      <h1 class="mb-4 text-6xl font-extrabold">{tr(LABELS.I_AM_COCO)}</h1>
       <p class="text-2xl font-bold">
         I'M LOST 😢 LAST SEEN SAYAN, KUTUH RICE FIELD<br />
         (GOOD DAY RESTO, UBUD)
@@ -15,50 +17,61 @@ import cocoOne from '@assets/coco-1.jpg'
     </div>
 
     <div class="grid gap-6 md:grid-cols-2">
-      <div class="relative">
-        <Picture
-          src={cocoOne}
-          formats={['avif', 'webp']}
-          alt="Coco - Lost female Bali Dog, light brown and greyish black brindle coat"
-          class="w-full rounded-lg shadow-lg"
-        />
-        <div class="absolute bottom-4 left-0 w-full text-center">
-          <a
-            href="tel:+62813375038902"
-            class="shadow-text text-4xl font-bold text-white hover:underline"
+      <div class="space-y-4">
+        <div class="relative h-min">
+          <Picture
+            src={cocoOne}
+            formats={['avif', 'webp']}
+            alt="Coco - Lost female Bali Dog, light brown and greyish black brindle coat"
+            class="w-full rounded-lg shadow-lg"
+          />
+          <div
+            class="absolute bottom-4 left-0 w-full text-center text-secondary"
           >
-            0813 3750 3890
-          </a>
+            <p>{tr(LABELS.PLEASE_CALL_OR_MESSAGE)}</p>
+            <a
+              href="tel:+62813375038902"
+              class="text-3xl font-bold text-secondary shadow-xl hover:underline"
+            >
+              +62813 3750 3890
+            </a>
+          </div>
         </div>
+        <ButtonsGroupContact class="flex flex-wrap" variant={'default'} />
       </div>
 
       <div class="space-y-4">
         <div class="mb-4 text-5xl font-black text-red-600">SEEN ME?</div>
-        <div class="text-2xl font-bold">
+        <div class="text-2xl font-bold text-foreground">
           PLS SCREENSHOT<br />
           IN CASE YOU SEE ME
         </div>
 
         <dl class="space-y-2 text-xl">
           <dt class="font-bold text-red-600">Breed:</dt>
-          <dd>Bali Dog, Female, 2 yo</dd>
+          <dd class="text-foreground">Bali Dog, Female, 2 years old</dd>
 
           <dt class="font-bold text-red-600">Color:</dt>
-          <dd>Light brown greyish black brindle</dd>
+          <dd class="text-foreground">Light brown greyish black brindle</dd>
 
           <dt class="text-2xl font-bold text-red-600">NO COLLAR</dt>
-          <dd>Very skinny, white streak above nose</dd>
+          <dd class="text-foreground">Very skinny, white streak above nose</dd>
         </dl>
 
         <div class="mt-4 border-t-4 border-red-600 pt-2">
-          <time datetime="2024-11-28" class="block text-xl font-bold">
-            Missing since 28 Nov 24
+          <time
+            datetime="2024-11-28"
+            class="block text-xl font-bold text-foreground"
+          >
+            Missing since 28 Nov 2024
           </time>
-          <p class="text-lg">Pls take pic if you see her</p>
+          <p class="text-lg text-foreground">
+            Please take picture if you see her
+          </p>
         </div>
 
         <div
-          class="mt-4 bg-black p-4 text-center text-2xl font-bold text-white"
+          class="mt-4 bg-foreground p-4 text-center text-2xl font-bold text-secondary"
         >
           REWARD<br />
           AVAILABLE

@@ -1,0 +1,39 @@
+---
+// Footer UI displayed on each page.
+import ButtonsGroupContact from '@/components/ButtonsGroupContact.astro'
+import LocalesHomeList from '@/components/i18n/LocalesHomeList.astro'
+const currentYear = new Date().getFullYear()
+const copyrightYearRange = currentYear === 2025 ? '2025' : `2025-${currentYear}`
+---
+
+<footer
+  class="flex flex-col items-center justify-center gap-y-8 bg-foreground px-4 py-6 text-center text-background"
+>
+  <div
+    class="flex w-full flex-col justify-center gap-2 rounded-lg border border-border py-8"
+  >
+    <div class="flex flex-col gap-y-2 px-4">
+      <h2 class="text-center text-3xl">Contact</h2>
+      <p class="text-center text-sm">
+        Please reach out to us if you have any information about Coco. We are
+        offering a big reward for her safe return home.
+      </p>
+    </div>
+    <ButtonsGroupContact class="flex flex-wrap pt-8" variant={'secondary'} />
+  </div>
+  <ul
+    class="flex w-full justify-center gap-4 rounded-lg border border-border py-2"
+  >
+    <LocalesHomeList />
+  </ul>
+
+  <p>Please help us find Coco and bring her home 🥺💔🐕.</p>
+  <a
+    class="copy"
+    href="https://toreylittlefield.dev/"
+    target="_blank"
+    dir="ltr"
+  >
+    © Torey Littlefield {copyrightYearRange}.
+  </a>
+</footer>
