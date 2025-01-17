@@ -2,12 +2,14 @@
 // Basic Layout for All Pages
 
 import Footer from '@/components/Footer.astro'
+import GoogleAnalytics from '@/components/GoogleAnalytics.astro'
 import Header from '@/components/Header.astro'
 // import LocaleHtmlHead from "@/components/i18n/LocaleHtmlHead.astro";
 // import LocaleSuggest from "@/components/i18n/LocaleSuggest.astro";
 
 // import { SITE_TITLE, SITE_DESCRIPTION, X_ACCOUNT } from '@/consts'
 import { LOCALES } from '@/i18n'
+import { ENV_VARS } from '@/utils/constants'
 const locale = Astro.currentLocale
 // const tr = useTranslations(Astro.currentLocale)
 // import '@/styles/global.css'
@@ -27,6 +29,7 @@ interface Props {
 <html lang={LOCALES[locale].lang || locale} dir={LOCALES[locale].dir || null}>
   <head>
     <meta charset="UTF-8" />
+    <GoogleAnalytics measurementId={ENV_VARS.PUBLIC_GTAG} />
     <!-- <title>{localeTitle}</title> -->
     <!-- <meta name="description" content={localeDescription} /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
