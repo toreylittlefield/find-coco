@@ -1,6 +1,7 @@
 export const ENV_VARS = {
   PUBLIC_WHATSAPP_PHONE_NUMBER: import.meta.env.PUBLIC_WHATSAPP_PHONE_NUMBER,
   PUBLIC_FB_MESSENGER_URL: import.meta.env.PUBLIC_FB_MESSENGER_URL,
+  PUBLIC_GTAG: import.meta.env.PUBLIC_GTAG,
 }
 
 export const WHATS_APP_MESSAGE_TEXT = `
