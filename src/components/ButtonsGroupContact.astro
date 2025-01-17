@@ -3,6 +3,7 @@ import Button, { type Props as ButtonProps } from '@/components/Button.astro'
 import LinkWhatsApp from '@/components/LinkWhatsApp.astro'
 import LinkFBMessenger from '@/components/LinkFBMessenger.astro'
 import { cn } from '@/utils/helpers'
+import ButtonShare from '@/components/ButtonShare.astro'
 
 interface Props extends Pick<ButtonProps, 'class' | 'variant'> {}
 const { class: className, variant } = Astro.props
@@ -10,13 +11,16 @@ const { class: className, variant } = Astro.props
 
 <ul class={cn('flex justify-center gap-4 px-4', className)}>
   <li>
-    <Button asChild variant={variant}>
-      <LinkWhatsApp />
+    <Button asChild variant={variant} class="h-auto p-0">
+      <LinkWhatsApp class="h-10 px-4 py-2" />
     </Button>
   </li>
   <li>
-    <Button asChild variant={variant}>
-      <LinkFBMessenger />
+    <Button asChild variant={variant} class="h-auto p-0">
+      <LinkFBMessenger class="h-10 px-4 py-2" />
     </Button>
+  </li>
+  <li>
+    <ButtonShare variant={variant} />
   </li>
 </ul>

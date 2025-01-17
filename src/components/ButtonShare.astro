@@ -1,0 +1,36 @@
+---
+import Button, { type Props as ButtonProps } from '@/components/Button.astro'
+import Icon from '@/components/Icon.astro'
+import { cn } from '@/utils/helpers'
+
+export interface Props extends ButtonProps {}
+
+const { class: className, variant } = Astro.props
+---
+
+<Button class={cn(className, 'share')} variant={variant}>
+  <div class="flex items-center gap-2">
+    <Icon iconName="share" />
+    <span> Share This Page </span>
+  </div>
+</Button>
+
+<script>
+  // find the share buttons
+  const buttons = document.querySelectorAll('button.share')
+
+  // Handle clicks on each button.
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          text: 'Please help Lost Dog Coco find her way back home.',
+          url: window.location.href,
+        })
+      } else {
+        alert('Web Share API not supported in your browser.')
+      }
+    })
+  })
+</script>
