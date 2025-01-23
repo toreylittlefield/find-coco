@@ -1,32 +1,34 @@
 import type { Handler } from '@netlify/functions'
 
-const PUBLIC_SITE_DOMAIN = process.env.PUBLIC_SITE_DOMAIN as string
+// TODO: fix the allowed origins
 
-if (!PUBLIC_SITE_DOMAIN) {
-  throw new Error('PUBLIC_SITE_DOMAIN is required')
-}
-// Add allowed origins - modify these to match your domains
-const ALLOWED_ORIGINS = [
-  'http://localhost:4321', // Local development
-  `${PUBLIC_SITE_DOMAIN}`, // Production
-  `${PUBLIC_SITE_DOMAIN.replace('https://www', 'https://')}`, // Production without www
-]
+// const PUBLIC_SITE_DOMAIN = process.env.PUBLIC_SITE_DOMAIN as string
+
+// if (!PUBLIC_SITE_DOMAIN) {
+//   throw new Error('PUBLIC_SITE_DOMAIN is required')
+// }
+// // Add allowed origins - modify these to match your domains
+// const ALLOWED_ORIGINS = [
+//   'http://localhost:4321', // Local development
+//   `${PUBLIC_SITE_DOMAIN}`, // Production
+//   `${PUBLIC_SITE_DOMAIN.replace('https://www', 'https://')}`, // Production without www
+// ]
 
 export const handler: Handler = async (event) => {
   console.log('Received request with headers:', JSON.stringify(event.headers))
   console.log('Origin:', event.headers.origin)
   console.log('Referer:', event.headers.referer)
 
-  // Get the request origin
-  const origin = event.headers.origin || event.headers.referer || ''
+  // // Get the request origin
+  // const origin = event.headers.origin || event.headers.referer || ''
 
-  // Check if the origin is allowed
-  if (!ALLOWED_ORIGINS.includes(origin)) {
-    return {
-      statusCode: 403,
-      body: 'Origin not allowed',
-    }
-  }
+  // // Check if the origin is allowed
+  // if (!ALLOWED_ORIGINS.includes(origin)) {
+  //   return {
+  //     statusCode: 403,
+  //     body: 'Origin not allowed',
+  //   }
+  // }
 
   // Only allow GET requests
   if (event.httpMethod !== 'GET') {
