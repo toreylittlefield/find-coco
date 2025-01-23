@@ -1,17 +1,9 @@
 ---
 import { Fragment } from 'astro/jsx-runtime'
-
-type Props = { pixelId: string }
-const props = Astro.props as Props
-const pixelId = props.pixelId
 ---
 
 <>
-  <script type="text/partytown" data-pixel-id={pixelId} id="pixel-init">
-    const pixelIdData = document
-      .getElementById('pixel-init')
-      .getAttribute('data-pixel-id')
-
+  <script type="text/partytown">
     !(function (f, b, e, v, n, t, s) {
       if (f.fbq) return
       n = f.fbq = function () {
@@ -35,7 +27,8 @@ const pixelId = props.pixelId
       'script',
       'https://connect.facebook.net/en_US/fbevents.js',
     )
-    fbq('init', pixelIdData)
+
+    fbq('init', 628415489741731)
     fbq('track', 'PageView')
   </script>
   <noscript
@@ -43,7 +36,7 @@ const pixelId = props.pixelId
       height="1"
       width="1"
       style="display:none"
-      src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
+      src={`https://www.facebook.com/tr?id=628415489741731&ev=PageView&noscript=1`}
     /></noscript
   >
 </>
