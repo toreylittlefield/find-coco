@@ -56,7 +56,7 @@ export const handler: Handler = async (event) => {
       headers: {
         'Content-Type': response.headers.get('content-type') || 'text/plain',
         // Set the specific origin that made the request
-        'Access-Control-Allow-Origin': origin,
+        'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': 'Content-Type',
         'Access-Control-Allow-Methods': 'GET',
         // Add this if you need to include credentials
