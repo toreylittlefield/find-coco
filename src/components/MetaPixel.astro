@@ -8,7 +8,7 @@ const pixelId = props.pixelId
 
 <>
   <script type="text/partytown" data-pixel-id={pixelId} id="pixel-init">
-    const pixelId = document
+    const pixelIdData = document
       .getElementById('pixel-init')
       .getAttribute('data-pixel-id')
 
@@ -35,7 +35,7 @@ const pixelId = props.pixelId
       'script',
       'https://connect.facebook.net/en_US/fbevents.js',
     )
-    fbq('init', pixelId)
+    fbq('init', pixelIdData)
     fbq('track', 'PageView')
   </script>
   <noscript
