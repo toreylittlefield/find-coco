@@ -42,7 +42,7 @@ export default defineConfig({
         forward: ['dataLayer.push', 'fbq'],
         resolveUrl: function (url) {
           if (url.hostname === 'connect.facebook.net') {
-            const baseURL = new URL(PUBLIC_SITE_DOMAIN)
+            const baseURL = new URL('https://lostdogcoco.com')
             const netlifyFunctionPath = '/.netlify/functions/partytown-proxy'
             const proxyUrl = new URL(netlifyFunctionPath, baseURL)
 
