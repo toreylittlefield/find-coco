@@ -35,7 +35,7 @@ const pixelId = props.pixelId
       'script',
       'https://connect.facebook.net/en_US/fbevents.js',
     )
-    fbq('init')
+    fbq('init', pixelId)
     fbq('track', 'PageView')
   </script>
   <noscript
