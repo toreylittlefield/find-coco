@@ -13,8 +13,12 @@ const ALLOWED_ORIGINS = [
 ]
 
 export const handler: Handler = async (event) => {
+  console.log('Received request with headers:', JSON.stringify(event.headers))
+  console.log('Origin:', event.headers.origin)
+  console.log('Referer:', event.headers.referer)
+
   // Get the request origin
-  const origin = event.headers.origin || ''
+  const origin = event.headers.origin || event.headers.referer || ''
 
   // Check if the origin is allowed
   if (!ALLOWED_ORIGINS.includes(origin)) {
