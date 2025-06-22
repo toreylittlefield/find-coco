@@ -5,5 +5,7 @@ export const LABELS = {
   HOME: 'HOME',
   I_AM_COCO: 'I_AM_COCO',
   PLEASE_CALL_OR_MESSAGE: 'PLEASE_CALL_OR_MESSAGE',
+  SITE_DESCRIPTION: 'SITE_DESCRIPTION',
   SITE_TITLE: 'SITE_TITLE',
+  SITE_NAME: 'SITE_NAME',
 } as const satisfies Record<Uppercase<string>, Uppercase<string>>
