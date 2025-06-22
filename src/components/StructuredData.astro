@@ -1,0 +1,16 @@
+---
+import { LABELS, useTranslations } from '@/i18n'
+
+const tr = useTranslations(Astro.currentLocale)
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site)
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: tr(LABELS.SITE_TITLE),
+  url: pageUrl,
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
