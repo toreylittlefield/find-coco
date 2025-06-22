@@ -1,11 +1,12 @@
 // @ts-check
 import partytown from '@astrojs/partytown'
-import tailwind from '@astrojs/tailwind'
 import { defineConfig } from 'astro/config'
 
 import netlify from '@astrojs/netlify'
 
 import { loadEnv } from 'vite'
+
+import tailwindcss from '@tailwindcss/vite';
 
 const NODE_ENV = process.env.NODE_ENV
 if (!NODE_ENV) {
@@ -34,9 +35,10 @@ export default defineConfig({
       redirectToDefaultLocale: true,
     },
   },
+
   site: PUBLIC_SITE_DOMAIN,
+
   integrations: [
-    tailwind({ applyBaseStyles: false }),
     partytown({
       config: {
         forward: ['dataLayer.push', 'fbq'],
@@ -54,5 +56,10 @@ export default defineConfig({
       },
     }),
   ],
+
   adapter: netlify(),
+
+  vite: {
+    plugins: [tailwindcss()]
+  }
 })
